@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <title>Login - Sign Up</title>
+</head>
+<body>
+    <!-- Animated Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+    <!-- Dark Mode Toggle -->
+    <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode" type="button">
+        <i class="fa-solid fa-moon" id="darkModeIcon"></i>
+    </button>
+    <div class="container" id="container">
+        <!-- Sign-Up Form -->
+        <div class="form-container sign-up">
+            <form id="signup-form" novalidate>
+                <h1>Create Account</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon" aria-label="Sign up with Google"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon" aria-label="Sign up with Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon" aria-label="Sign up with GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon" aria-label="Sign up with LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>Or register using your email.</span>
+                <div class="input-group">
+                    <label for="signup-name" class="sr-only">Full Name</label>
+                    <input type="text" placeholder="Full Name" id="signup-name" aria-describedby="signup-name-error" autocomplete="name">
+                    <span class="error-message" id="signup-name-error" role="alert"></span>
+                </div>
+                <div class="input-group">
+                    <label for="signup-email" class="sr-only">Email Address</label>
+                    <input type="email" placeholder="Email Address" id="signup-email" aria-describedby="signup-email-error" autocomplete="email">
+                    <span class="error-message" id="signup-email-error" role="alert"></span>
+                </div>
+                <div class="input-group">
+                    <div class="password-container">
+                        <label for="signup-password" class="sr-only">Password</label>
+                        <input type="password" placeholder="Password" id="signup-password" aria-describedby="signup-password-error" autocomplete="new-password">
+                        <i class="fa-solid fa-eye" id="toggleSignUpPassword" aria-label="Toggle password visibility" role="button" tabindex="0"></i>
+                    </div>
+                    <!-- Caps Lock Warning -->
+                    <span class="capslock-warning" id="signup-capslock" role="alert">
+                        <i class="fa-solid fa-lock"></i> Caps Lock is ON
+                    </span>
+                    <!-- Password Strength -->
+                    <div class="strength-wrapper" id="signup-strength-wrapper">
+                        <div class="strength-bar">
+                            <div class="strength-bar-fill" id="signup-strength-bar"></div>
+                        </div>
+                        <span class="strength-label" id="signup-strength-label"></span>
+                    </div>
+                    <!-- Character Count -->
+                    <span class="char-count" id="signup-char-count">0 characters</span>
+                    <span class="error-message" id="signup-password-error" role="alert"></span>
+                </div>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+        <!-- Sign-In Form -->
+        <div class="form-container sign-in">
+            <form id="signin-form" novalidate>
+                <h1>Welcome Back!</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon" aria-label="Sign in with Google"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon" aria-label="Sign in with Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon" aria-label="Sign in with GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon" aria-label="Sign in with LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>Or sign in with your email.</span>
+                <div class="input-group">
+                    <label for="signin-email" class="sr-only">Email Address</label>
+                    <input type="email" placeholder="Email Address" id="signin-email" aria-describedby="signin-email-error" autocomplete="email">
+                    <span class="error-message" id="signin-email-error" role="alert"></span>
+                </div>
+                <div class="input-group">
+                    <div class="password-container">
+                        <label for="signin-password" class="sr-only">Password</label>
+                        <input type="password" placeholder="Password" id="signin-password" aria-describedby="signin-password-error" autocomplete="current-password">
+                        <i class="fa-solid fa-eye" id="toggleSignInPassword" aria-label="Toggle password visibility" role="button" tabindex="0"></i>
+                    </div>
+                    <!-- Caps Lock Warning -->
+                    <span class="capslock-warning" id="signin-capslock" role="alert">
+                        <i class="fa-solid fa-lock"></i> Caps Lock is ON
+                    </span>
+                    <!-- Character Count -->
+                    <span class="char-count" id="signin-char-count">0 characters</span>
+                    <span class="error-message" id="signin-password-error" role="alert"></span>
+                </div>
+                <!-- Remember Me -->
+                <div class="remember-me">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="remember-me">
+                        <span class="custom-checkbox"></span>
+                        Remember me
+                    </label>
+                </div>
+                <a href="#">Forgot your password?</a>
+                <button type="submit">Sign In</button>
+            </form>
+        </div>
+        <!-- Toggle Panels -->
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Sign in to access all features and continue from where you left off.</p>
+                    <button class="hidden" id="login" type="button">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Create an account to enjoy all features and stay connected with us!</p>
+                    <button class="hidden" id="register" type="button">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

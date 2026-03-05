@@ -36,6 +36,6 @@ Contributions are welcome! Open an issue, suggest improvements, or enhance featu
 ## 📸 Snapshots
 
 <p align="center">
-  <img src="screenshots/screenshot1.png" alt="Login Page" width="45%">
-  <img src="screenshots/screenshot2.png" alt="Signup Page" width="45%">
+  <img src="Dark Mode.png" alt="Dark Mode" width="45%">
+  <img src="Light Mode.png" alt="Light Mode" width="45%">
 </p>

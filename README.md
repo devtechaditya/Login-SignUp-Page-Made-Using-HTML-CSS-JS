@@ -32,3 +32,10 @@ A **sleek, interactive, and responsive** Login & Signup page built using **HTML,
 ## 🤝 Contributing
 
 Contributions are welcome! Open an issue, suggest improvements, or enhance features.  
+
+## 📸 Snapshots
+
+<p align="center">
+  <img src="screenshots/screenshot1.png" alt="Login Page" width="45%">
+  <img src="screenshots/screenshot2.png" alt="Signup Page" width="45%">
+</p>
